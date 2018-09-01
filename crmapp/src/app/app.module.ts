@@ -2,26 +2,26 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { AccountListComponentComponent } from './account-list-component/account-list-component.component';
-import { AccountCreateComponentComponent } from './account-create-component/account-create-component.component';
-import { ContactListComponentComponent } from './contact-list-component/contact-list-component.component';
-import { ContactCreateComponentComponent } from './contact-create-component/contact-create-component.component';
-import { LeadListComponentComponent } from './lead-list-component/lead-list-component.component';
-import { LeadCreateComponentComponent } from './lead-create-component/lead-create-component.component';
-import { OpportunityListComponentComponent } from './opportunity-list-component/opportunity-list-component.component';
-import { OpportunityCreateComponentComponent } from './opportunity-create-component/opportunity-create-component.component';
+import { ContactListComponent } from './contact-list/contact-list.component';
+import { ContactCreateComponent } from './contact-create/contact-create.component';
+import { AccountListComponent } from './account-list/account-list.component';
+import { AccountCreateComponent } from './account-create/account-create.component';
+import { LeadListComponent } from './lead-list/lead-list.component';
+import { LeadCreateComponent } from './lead-create/lead-create.component';
+import { OpportunityListComponent } from './opportunity-list/opportunity-list.component';
+import { OpportunityCreateComponent } from './opportunity-create/opportunity-create.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AccountListComponentComponent,
-    AccountCreateComponentComponent,
-    ContactListComponentComponent,
-    ContactCreateComponentComponent,
-    LeadListComponentComponent,
-    LeadCreateComponentComponent,
-    OpportunityListComponentComponent,
-    OpportunityCreateComponentComponent
+    ContactListComponent,
+    ContactCreateComponent,
+    AccountListComponent,
+    AccountCreateComponent,
+    LeadListComponent,
+    LeadCreateComponent,
+    OpportunityListComponent,
+    OpportunityCreateComponent
   ],
   imports: [
     BrowserModule
