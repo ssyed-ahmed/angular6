@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule }  from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ContactListComponent } from './contact-list/contact-list.component';
@@ -10,6 +11,8 @@ import { LeadListComponent } from './lead-list/lead-list.component';
 import { LeadCreateComponent } from './lead-create/lead-create.component';
 import { OpportunityListComponent } from './opportunity-list/opportunity-list.component';
 import { OpportunityCreateComponent } from './opportunity-create/opportunity-create.component';
+import { AppRoutingModule } from 'src/app/app-routing/app-routing.module';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import { OpportunityCreateComponent } from './opportunity-create/opportunity-cre
     OpportunityCreateComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
