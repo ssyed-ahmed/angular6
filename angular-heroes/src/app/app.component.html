@@ -1,11 +1,27 @@
-<h1>
-  {{title}}
-</h1>
-
-<nav>
-  <a routerLink="/heroes">Heroes</a>
-  <a routerLink="/dashboard">Dashboard</a>
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+      <img src="../assets/icon.png" width="50" height="50" alt="">
+      <div class="main-title">
+          Superheroes
+        </div>
+    </a>
+    
 </nav>
 
-<router-outlet></router-outlet>
-<app-messages></app-messages>
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-xs-5">
+        Test
+      </div>
+      <div class="col-xs-7">
+          <router-outlet></router-outlet>
+          <app-messages></app-messages>
+      </div>
+  </div>
+</div>
+
+<!-- <nav>
+  <a routerLink="/heroes">Heroes</a>
+  <a routerLink="/dashboard">Dashboard</a>
+</nav> -->
+
