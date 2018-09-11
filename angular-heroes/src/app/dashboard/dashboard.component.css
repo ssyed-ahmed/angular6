@@ -58,6 +58,11 @@ h4 {
 .grid-pad > [class*='col-']:last-of-type {
     padding-right: 20px;
 }
+.image-size {
+    width: 100%;
+    height: 220px;
+    margin-top: 10px;
+}
 
 @media (max-width: 600px) {
     .module {
