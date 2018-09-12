@@ -10,3 +10,21 @@
     padding: 10px;
     margin: 10px;
 }
+.hero-card:hover {
+    float: left;
+    width: 220px;
+    height: 300px;
+    border: 1px solid gold;
+    padding: 10px;
+    margin: 10px;
+    background-color: #888;
+    left: .1em;
+}
+.image-size {
+    display: block;
+    max-width: 230px;
+    max-height: 200px;
+    width: auto;
+    height: auto;
+    margin-top: 10px;
+}
