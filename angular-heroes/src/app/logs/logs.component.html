@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="hero-card-container">
+        <div class="hero-card" *ngFor="let hero of heroes">
+          <img class="card-img-top image-size" src="./../../assets/{{hero.name | lowercase}}.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{hero.name}}</h5>
+          </div>
+        </div>
+    </div>    
+  </div>
+</div>

@@ -1,0 +1,12 @@
+.hero-card-container {
+    width: 100%;
+    overflow-wrap: break-word;
+}
+.hero-card {
+    float: left;
+    width: 220px;
+    height: 300px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+}
