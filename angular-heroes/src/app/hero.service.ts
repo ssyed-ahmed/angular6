@@ -26,11 +26,6 @@ export class HeroService {
       );
   }
 
-  getHero(id: number): Observable<Hero> {
-    this.messageService.add(`HeroService: feteched hero id=${id}`);
-    return of(HEROES.find(hero => hero.id === id));
-  }
-
   private log(message: string) {
     this.messageService.add(`HeroService ${message}`);
   }
@@ -42,5 +37,14 @@ export class HeroService {
 
       return of(result as T);
     };
+  }
+
+  getHero(id: number): Observable<Hero> {
+    const url = `${this.heroesUrl}/${id}`;
+    return this.http.get<Hero>(url)
+      .pipe(
+        tap(_ => this.log(`fetched hero id=${id}`)),
+        catchError(this.handleError<Hero>(`getHero id=${id}`))
+      );
   }
 }
