@@ -12,6 +12,7 @@ import { Location } from '@angular/common';
 export class HeroDetailComponent implements OnInit {
 
   hero: Hero;
+  title: string = 'Hero Details';
 
   constructor(
     private route: ActivatedRoute, 

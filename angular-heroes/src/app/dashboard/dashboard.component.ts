@@ -11,6 +11,7 @@ import { HeroesComponent } from 'src/app/heroes/heroes.component';
 export class DashboardComponent implements OnInit {
 
   heroes: Hero[] = [];
+  title: string = 'Dashboard';
 
   constructor(private heroService: HeroService) { }
 
