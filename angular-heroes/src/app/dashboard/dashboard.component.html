@@ -11,7 +11,7 @@
   <div class="col-xs-12">
     <div class="hero-card-container">
         <div *ngFor="let hero of heroes" routerLink="/detail/{{hero.id}}" class="hero-card" style="width: 18rem;">
-          <img class="card-img-top image-size" src="./../../assets/{{hero.name | lowercase}}.png" alt="Card image cap">
+          <img class="card-img-top image-size" src="./../../assets/{{hero.icon | lowercase}}.png" alt="Card image cap">
           <div class="card-body">
             <h5 class="hero-card-title">{{hero.name}}</h5>            
           </div>
