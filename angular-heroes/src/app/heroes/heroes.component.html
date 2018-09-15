@@ -12,7 +12,7 @@
        </tr> 
       </thead>
       <tbody>
-        <tr *ngFor="let hero of heroes">
+        <tr *ngFor="let hero of heroes" (click)="selectHero(hero.id)">
           <td>{{hero.id}}</td>
           <td>{{hero.name}}</td>
           <td>{{hero.description}}</td>
