@@ -39,5 +39,6 @@ label {
     padding: 10px;
 }
 .section-body {
-    padding: 20px;
+    padding-top: 20px;
+    padding-left: 10px;
 }
