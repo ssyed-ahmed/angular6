@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from '../message.service';
-import { HEROES } from '../mock-heroes';
-import { Hero } from '../hero';
 
 @Component({
   selector: 'app-logs',
@@ -10,21 +8,16 @@ import { Hero } from '../hero';
 })
 export class LogsComponent implements OnInit {
 
-  heroes: Hero[];
+  messages: string[]
 
   constructor(private messageService: MessageService) { }
 
   ngOnInit() {
-    // this.loadMessages();
-    this.loadHeroes();
+    this.loadMessages();
   }
 
-  loadHeroes(): void {
-    this.heroes = HEROES;
-  }
-
-  loadMessages(): string[] {
-    return this.messageService.messages;
+  loadMessages(): void {
+    this.messages = this.messageService.messages;
   }
 
 }
