@@ -36,3 +36,6 @@ nav a:active {
     color: #039be5;
 } */
 
+.nav-pills .nav-link {
+    border-radius: 0;
+}

@@ -8,7 +8,8 @@ import { MessageService } from '../message.service';
 })
 export class LogsComponent implements OnInit {
 
-  messages: string[]
+  messages: string[];
+  title: string = 'Logs';
 
   constructor(private messageService: MessageService) { }
 

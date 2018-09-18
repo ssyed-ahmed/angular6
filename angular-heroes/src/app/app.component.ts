@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Tour of heroes';
+
+  public selectedTab = 'dashboard';
+
+  setSelectedTab(tab: string): void {
+    this.selectedTab = tab;
+  }
 }
