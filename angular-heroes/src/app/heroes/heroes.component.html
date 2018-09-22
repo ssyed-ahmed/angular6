@@ -1,6 +1,15 @@
 <div class="section">
   <div class="section-header">
-    {{title}}
+    <div class="row">
+      <div class="col-sm-10">
+          {{title}}
+      </div>
+      <div class="col-sm-2 btn-grp-padding">
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary"><i class="fas fa-user-plus"></i> Add</button>
+        </div>
+      </div>
+    </div>     
   </div>
   <div class="section-body">
     <table class="table table-striped">
@@ -9,6 +18,7 @@
          <td>Id</td>
          <td>Name</td>
          <td>Description</td>
+         <td>Action</td>
        </tr> 
       </thead>
       <tbody>
@@ -16,6 +26,10 @@
           <td>{{hero.id}}</td>
           <td>{{hero.name}}</td>
           <td>{{hero.description}}</td>
+          <td>
+            <i class="fas fa-edit"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="fas fa-times"></i>
+          </td>
         </tr>
       </tbody>
     </table>
