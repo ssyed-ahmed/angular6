@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from '../message.service';
+import { Message } from '../message';
 
 @Component({
   selector: 'app-logs',
@@ -8,7 +9,7 @@ import { MessageService } from '../message.service';
 })
 export class LogsComponent implements OnInit {
 
-  messages: string[];
+  messages: Message[];
   title: string = 'Logs';
 
   constructor(private messageService: MessageService) { }

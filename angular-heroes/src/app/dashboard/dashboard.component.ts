@@ -3,6 +3,7 @@ import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { HeroesComponent } from 'src/app/heroes/heroes.component';
 import { MessageService } from '../message.service';
+import { Message, Severity } from '../message';
 
 @Component({
   selector: 'app-dashboard',
@@ -28,6 +29,7 @@ export class DashboardComponent implements OnInit {
       .subscribe(heroes => {
         this.heroes = heroes.slice(0, 8);
       })
-    this.messageService.add('Fetched heroes in dashboard.');
+    var message = new Message('Fetched heroes in dashboard.', Severity.INFO, new Date(), null);
+    this.messageService.add(message);
   }
 }

@@ -5,6 +5,7 @@ import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
+import { Message, Severity } from 'src/app/message';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +28,8 @@ export class HeroService {
   }
 
   private log(message: string) {
-    this.messageService.add(`HeroService ${message}`);
+    let msg = new Message(`HeroService ${message}`, Severity.INFO, new Date(), null);
+    this.messageService.add(msg);
   }
 
   private handleError<T> (operation = 'operation', result? : T) {

@@ -39,3 +39,7 @@ nav a:active {
 .nav-pills .nav-link {
     border-radius: 0;
 }
+.no-padding {
+    padding-left: 0;
+    padding-right: 0;
+}

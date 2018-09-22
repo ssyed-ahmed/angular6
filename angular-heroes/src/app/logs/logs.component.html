@@ -9,13 +9,19 @@
             <thead>
               <tr>
                 <td>No.</td>
+                <td>Type</td>
                 <td>Message</td>
+                <td>Time</td>
+                <td>Stack trace</td>
               </tr> 
             </thead>
             <tbody>
               <tr *ngFor="let message of messages; index as i">
                 <td>{{i+1}}</td>
-                <td>{{message}}</td>
+                <td>{{message.severity}}</td>
+                <td>{{message.message}}</td>
+                <td>{{message.timestamp | date: 'short'}}</td>
+                <td>{{message.stackTrace}}</td>
               </tr>
             </tbody>
           </table>
