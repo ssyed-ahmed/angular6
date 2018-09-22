@@ -32,4 +32,21 @@ export class HeroesComponent implements OnInit {
   selectHero(id: string): void {
     this.router.navigate(['detail', id]);
   }
+
+  addHero(): void {
+    console.log('add hero clicked');
+  }
+
+  editHero(hero: Hero): void {
+    console.log('Edit hero clicked');
+    console.log(hero);
+  }
+
+  deleteHero(hero: Hero): void {
+    let val = confirm('Are you sure you want to delete this hero?');
+    if (val) {
+      console.log('Delete hero clicked');
+      console.log(hero);
+    }
+  }
 }

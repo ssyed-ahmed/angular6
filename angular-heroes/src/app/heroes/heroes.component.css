@@ -67,3 +67,14 @@
 .btn-grp-padding {
   padding-left: 100px;
 }
+.section-title {
+  padding-left: 25px;
+  font-size: 1.25rem;
+}
+.hero-detail-link, .action-link {
+  cursor: pointer;
+}
+.hero-detail-link:hover, .action-link:hover {
+  cursor: pointer;
+  color: cornflowerblue;
+}

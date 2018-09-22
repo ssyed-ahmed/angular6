@@ -1,12 +1,12 @@
 <div class="section">
   <div class="section-header">
     <div class="row">
-      <div class="col-sm-10">
+      <div class="col-sm-10 section-title">
           {{title}}
       </div>
       <div class="col-sm-2 btn-grp-padding">
         <div class="btn-group">
-          <button type="button" class="btn btn-primary"><i class="fas fa-user-plus"></i> Add</button>
+          <button type="button" class="btn btn-primary" (click)="addHero()"><i class="fas fa-user-plus"></i> Add</button>
         </div>
       </div>
     </div>     
@@ -22,13 +22,13 @@
        </tr> 
       </thead>
       <tbody>
-        <tr *ngFor="let hero of heroes" (click)="selectHero(hero.id)">
+        <tr *ngFor="let hero of heroes">
           <td>{{hero.id}}</td>
-          <td>{{hero.name}}</td>
+          <td class="hero-detail-link" (click)="selectHero(hero.id)">{{hero.name}}</td>
           <td>{{hero.description}}</td>
           <td>
-            <i class="fas fa-edit"></i>&nbsp;&nbsp;&nbsp;&nbsp;
-            <i class="fas fa-times"></i>
+            <i class="fas fa-edit action-link" (click)="editHero(hero)"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="fas fa-times action-link" (click)="deleteHero(hero)"></i>
           </td>
         </tr>
       </tbody>
