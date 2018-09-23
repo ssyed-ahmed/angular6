@@ -13,7 +13,6 @@ import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LogsComponent } from './logs/logs.component';
 import { SectionComponent } from './section/section.component';
-
 @NgModule({
   declarations: [
     AppComponent,
