@@ -47,4 +47,19 @@
 .section-title {
     padding-left: 25px;
     font-size: 1.25rem;
-  }
+}
+.info-style {
+    color: blue;
+}
+.warn-style {
+    color: orange;
+}
+.debug-style {
+    color: green;
+}
+.error-style {
+    color: red;
+}
+.fatal-style {
+    color: black;
+}

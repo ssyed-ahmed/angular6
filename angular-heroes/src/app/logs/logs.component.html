@@ -24,11 +24,11 @@
                 <td>{{i+1}}</td>
                 <td>
                   <div [ngSwitch]="message.severity">
-                    <div *ngSwitchCase="'0'"><i class="fas fa-info-circle"></i> Info</div>
-                    <div *ngSwitchCase="'1'"><i class="fas fa-exclamation-triangle"></i> Warning</div>
-                    <div *ngSwitchCase="'2'"><i class="fas fa-bug"></i> Debug</div>
-                    <div *ngSwitchCase="'3'"><i class="fas fa-times-circle"></i> Error</div>
-                    <div *ngSwitchCase="'4'"><i class="fas fa-skull"></i> Fatal</div>
+                    <div *ngSwitchCase="'0'"><i class="fas fa-info-circle info-style"></i> Info</div>
+                    <div *ngSwitchCase="'1'"><i class="fas fa-exclamation-triangle warn-style"></i> Warning</div>
+                    <div *ngSwitchCase="'2'"><i class="fas fa-bug debug-style"></i> Debug</div>
+                    <div *ngSwitchCase="'3'"><i class="fas fa-times-circle error-style"></i> Error</div>
+                    <div *ngSwitchCase="'4'"><i class="fas fa-skull fatal-style"></i> Fatal</div>
                   </div>
                 </td>
                 <td>{{message.message}}</td>

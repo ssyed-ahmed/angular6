@@ -34,8 +34,15 @@ export class HeroesComponent implements OnInit {
     this.router.navigate(['detail', id]);
   }
 
-  addHero(): void {
-    console.log('add hero clicked');
+  addHero(name: string): void {
+    name = name.trim();
+    if (!name) {
+      return;
+    }
+    this.heroService.addHero({name} as Hero)
+      .subscribe(hero => {
+        this.heroes.push(hero);
+      })
   }
 
   editHero(hero: Hero): void {

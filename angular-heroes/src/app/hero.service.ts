@@ -13,7 +13,7 @@ import { Message, Severity } from 'src/app/message';
 export class HeroService {
 
   private heroesUrl = 'api/heroes';
-
+  
   constructor(
     private http: HttpClient,
     private messageService: MessageService
@@ -61,11 +61,31 @@ export class HeroService {
       );
   }
 
-  addHero(name: string): void {
-    name = name.trim();
-    if (!name)  {
-      return;
-    }
-    
+  addHero(hero: Hero): Observable<Hero> {
+    const httpOptions = {
+      headers: new HttpHeaders({'Content-Type': 'application/json'})
+    };
+    return this.http.post<Hero>(this.heroesUrl, hero, httpOptions)
+      .pipe(
+        tap((hero: Hero) => {
+          this.log(`added hero with id=${hero.id}`)
+        }),
+        catchError(this.handleError<Hero>('addHero'))
+      );
   }
+
+  // deleteHero(hero: Hero | number): Observable<Hero> {
+  //   const httpOptions = {
+  //     headers: new HttpHeaders({'Content-Type': 'application/json'})
+  //   };
+  //   const id = typeof hero === 'number' ? hero: hero.id;
+  //   const url = `${this.heroesUrl}/${id}`;
+  //   return this.http.delete(url, httpOptions)
+  //     .pipe(
+  //       tap(_ => {
+  //         this.log(`deleted hero with id=${id}`)
+  //       }),
+  //       catchError(this.handleError<Hero>('deleteHero'))
+  //     );
+  // }
 }

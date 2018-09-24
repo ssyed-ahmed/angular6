@@ -6,7 +6,7 @@
       </div>
       <div class="col-sm-2 btn-grp-padding">
         <div class="btn-group">
-          <button type="button" class="btn btn-primary" (click)="addHero()"><i class="fas fa-user-plus"></i> Add</button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addHeroModal"><i class="fas fa-user-plus"></i> Add</button>
         </div>
       </div>
     </div>     
@@ -50,12 +50,48 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-primary">Confirm</button>
+            <button type="button" class="btn btn-primary">OK</button>
           </div>
         </div>
       </div>
     </div>
     <!-- Modal end -->
+
+    <!-- Add hero modal template-->
+    <!-- Modal -->
+    <div class="modal fade" id="addHeroModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document" data-backdrop="static">
+          <div class="modal-content">
+            <div class="modal-header hero-modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Add hero</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true" class="close-style">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <form>
+                      <div class="form-group row">
+                        <label for="heroName" class="col-sm-3 col-form-label">Hero name:</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" placeholder="name" #heroName>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-primary" (click)="add(heroName.value); heroName.value=''">OK</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal end -->
   </div>
 </div>
 
