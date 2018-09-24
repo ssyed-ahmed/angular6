@@ -71,3 +71,6 @@ nav a:active {
 .refresh-style:hover {
     color: cornflowerblue;
 }
+.no-right-padding {
+    padding-right: 0;
+}
