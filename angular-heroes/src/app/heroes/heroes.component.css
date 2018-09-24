@@ -78,3 +78,10 @@
   cursor: pointer;
   color: cornflowerblue;
 }
+.hero-modal-header {
+  background-color: crimson;
+  color: #fff;
+}
+.close-style {
+  color: #fff;
+}

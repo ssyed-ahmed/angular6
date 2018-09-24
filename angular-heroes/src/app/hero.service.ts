@@ -60,4 +60,12 @@ export class HeroService {
         catchError(this.handleError<any>(`update hero`))
       );
   }
+
+  addHero(name: string): void {
+    name = name.trim();
+    if (!name)  {
+      return;
+    }
+    
+  }
 }
