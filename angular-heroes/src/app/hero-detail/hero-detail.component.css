@@ -33,12 +33,17 @@ label {
     border: 1px solid #ccc;
 }
 .section-header {
-    height: 45px;
+    height: 60px;
     background-color: crimson;
     color: #fff;
     padding: 10px;
+    line-height: 40px;
 }
 .section-body {
     padding-top: 20px;
     padding-left: 10px;
+}
+.section-title {
+  padding-left: 25px;
+  font-size: 1.25rem;
 }

@@ -9,7 +9,7 @@ import { PageNotFoundComponent } from 'src/app/page-not-found/page-not-found.com
 const routes: Routes = [
   { path: 'heroes', component: HeroesComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'detail/:id', component: HeroDetailComponent },
+  { path: 'heroes/:id', component: HeroDetailComponent },
   { path: 'logs', component: LogsComponent },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: "**", component: PageNotFoundComponent }
