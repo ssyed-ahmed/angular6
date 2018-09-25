@@ -13,6 +13,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LogsComponent } from './logs/logs.component';
 import { SectionComponent } from './section/section.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { SectionComponent } from './section/section.component';
     MessagesComponent,
     DashboardComponent,
     LogsComponent,
-    SectionComponent
+    SectionComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
