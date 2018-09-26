@@ -70,6 +70,16 @@ h4 {
     padding: 10px;
     margin: 10px;
 }
+.hero-card-selected {
+    float: left;
+    width: 220px;
+    height: 300px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    background-color: orange;
+    border: 2px solid blue;
+}
 .hero-card:hover {
     float: left;
     width: 220px;

@@ -7,6 +7,7 @@ import { Message, Severity } from '../message';
 import { Subscription } from 'rxjs';
 import { CommunicationService } from '../communication.service';
 import { HEROES } from '../mock-heroes';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -17,13 +18,15 @@ export class DashboardComponent implements OnInit {
 
   heroes: Hero[] = [];
   title: string = 'Dashboard';
+  selectedId;
 
   subscription: Subscription;
 
   constructor(
     private heroService: HeroService,
     private messageService: MessageService,
-    private communicationService: CommunicationService
+    private communicationService: CommunicationService,
+    private route: ActivatedRoute
   ) {
     // Subscribe to the app component messages
     this.subscription = this.communicationService.getMessage().subscribe(message => {
@@ -35,6 +38,10 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.getHeroes();
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      let id = parseInt(params.get('id'));
+      this.selectedId = id;
+    })
   }
 
   getHeroes(): void {
@@ -48,5 +55,9 @@ export class DashboardComponent implements OnInit {
 
   restoreHeroes(): void {
     this.heroes = HEROES;
+  }
+
+  isSelected(hero): boolean {
+    return hero.id === this.selectedId;
   }
 }
