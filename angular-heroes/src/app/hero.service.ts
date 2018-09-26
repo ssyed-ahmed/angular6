@@ -98,4 +98,8 @@ export class HeroService {
         catchError(this.handleError<Hero[]>(`searchHeroes`, []))
       );
   }
+
+  restoreHeroes(): Hero[] {
+    return HEROES;
+  }
 }
