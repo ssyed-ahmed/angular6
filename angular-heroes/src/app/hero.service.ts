@@ -74,18 +74,28 @@ export class HeroService {
       );
   }
 
-  // deleteHero(hero: Hero | number): Observable<Hero> {
-  //   const httpOptions = {
-  //     headers: new HttpHeaders({'Content-Type': 'application/json'})
-  //   };
-  //   const id = typeof hero === 'number' ? hero: hero.id;
-  //   const url = `${this.heroesUrl}/${id}`;
-  //   return this.http.delete(url, httpOptions)
-  //     .pipe(
-  //       tap(_ => {
-  //         this.log(`deleted hero with id=${id}`)
-  //       }),
-  //       catchError(this.handleError<Hero>('deleteHero'))
-  //     );
-  // }
+  deleteHero(hero: Hero | number): Observable<Hero> {
+    const httpOptions = {
+      headers: new HttpHeaders({'Content-Type': 'application/json'})
+    };
+    const id = typeof hero === 'number' ? hero: hero.id;
+    const url = `${this.heroesUrl}/${id}`;
+
+    return this.http.delete<Hero>(url, httpOptions)
+      .pipe(
+        tap(_ => this.log(`deleted hero with id = ${id}`)),
+        catchError(this.handleError<Hero>(`deleteHero`))
+      );
+  }
+
+  searchHero(term: string): Observable<Hero[]> {
+    if (!term.trim()) {
+      return of([]);
+    }
+    return this.http.get<Hero[]>(`${this.heroesUrl}/?name=${term}`)
+      .pipe(
+        tap(_ => this.log(`found heroes matching "${term}"`)),
+        catchError(this.handleError<Hero[]>(`searchHeroes`, []))
+      );
+  }
 }

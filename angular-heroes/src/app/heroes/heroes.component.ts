@@ -13,6 +13,7 @@ export class HeroesComponent implements OnInit {
   heroes: Hero[];
   title: string = 'Heroes';
   public displayDeleteDialog = 'none';
+  heroToDelete;
 
   constructor(
     private heroService: HeroService,
@@ -51,11 +52,13 @@ export class HeroesComponent implements OnInit {
   }
 
   deleteHero(hero: Hero): void {
-    this.displayDeleteDialog = 'block';
-    // let val = confirm('Are you sure you want to delete this hero?');
-    // if (val) {
-    //   console.log('Delete hero clicked');
-    //   console.log(hero);
-    // }
+    this.heroToDelete = hero;
+  }
+
+  deleteHeroConfirmed(): void {
+    if (this.heroToDelete) {
+      this.heroes = this.heroes.filter(h => h !== this.heroToDelete);
+      this.heroService.deleteHero(this.heroToDelete).subscribe();
+    }
   }
 }

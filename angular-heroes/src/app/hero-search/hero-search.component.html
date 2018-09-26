@@ -1,0 +1,10 @@
+<div class="input-group mb-3">
+  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" class="form-control" placeholder="Search text" aria-label="Search text">
+  <ul class="search-result">
+    <li *ngFor="let hero of heroes$ | async">
+      <a routerLink="/heroes/{{hero.id}}">
+        {{hero.name}}
+      </a>
+    </li>
+  </ul>
+</div>
