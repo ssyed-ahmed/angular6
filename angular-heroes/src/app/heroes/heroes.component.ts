@@ -55,7 +55,7 @@ export class HeroesComponent implements OnInit {
   }
 
   selectHero(id: string, fromState: string): void {
-    this.router.navigate(['/heroes', id, fromState]);
+    this.router.navigate([id, fromState], {relativeTo: this.route});
   }
 
   addHero(name: string): void {
