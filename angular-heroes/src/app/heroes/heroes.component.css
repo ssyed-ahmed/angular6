@@ -85,3 +85,6 @@
 .close-style {
   color: #fff;
 }
+.selected-hero {
+  border: 2px solid gold;
+}

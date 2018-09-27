@@ -4,6 +4,7 @@ import { HeroService } from 'src/app/hero.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { CommunicationService } from '../communication.service';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-heroes',
@@ -16,13 +17,15 @@ export class HeroesComponent implements OnInit {
   title: string = 'Heroes';
   public displayDeleteDialog = 'none';
   heroToDelete;
+  selectedId;
 
   subscription: Subscription;
 
   constructor(
     private heroService: HeroService,
     private router: Router,
-    private communicationService: CommunicationService
+    private communicationService: CommunicationService,
+    private route: ActivatedRoute
   ) { 
     // Subscribe to the app component messages
     this.subscription = this.communicationService.getMessage().subscribe(message => {
@@ -34,6 +37,10 @@ export class HeroesComponent implements OnInit {
 
   ngOnInit() {
     this.getHeroes();
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      let id = parseInt(params.get('id'));
+      this.selectedId = id;
+    })
   }
 
   ngOnDestroy() {
@@ -80,5 +87,9 @@ export class HeroesComponent implements OnInit {
 
   restoreHeroes(): void {
     this.heroes = this.heroService.restoreHeroes();
+  }
+
+  isSelected(hero): boolean {
+    return hero.id === this.selectedId;
   }
 }
