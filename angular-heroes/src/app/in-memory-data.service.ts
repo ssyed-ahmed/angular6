@@ -18,7 +18,8 @@ export class InMemoryDataService implements InMemoryDbService {
       new Hero(15, 'Spiderman', 'spiderman', 'This is spider man.'),
       new Hero(16, 'Superman', 'superman', 'This is super man.'),
       new Hero(17, 'Wonderwoman', 'wonderwoman', 'This is wonder woman.'),
-      new Hero(18, 'Green lantern', 'greenlantern', 'This is green lantern.')
+      new Hero(18, 'Green lantern', 'greenlantern', 'This is green lantern.'),
+      new Hero(19, 'New hero', 'default', 'This is default hero.')
     ];
 
     return {heroes};
