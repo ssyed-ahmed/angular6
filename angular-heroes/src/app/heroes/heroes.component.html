@@ -83,7 +83,9 @@
                       <div class="form-group row">
                         <label for="name" class="col-sm-3 col-form-label">Name:</label>
                         <div class="col-sm-9">
-                          <input type="text" class="form-control" placeholder="name" name="Name" [(ngModel)]="heroModel.name">
+                          <input type="text" #name="ngModel" [class.is-invalid]="name.invalid && name.touched" class="form-control" 
+                            placeholder="name" name="Name" [(ngModel)]="heroModel.name" required>
+                            <small [class.d-none]="name.valid || name.untouched" class="text-danger"><i class="fas fa-times-circle error-style"></i> Name is required</small>
                         </div>
                       </div>
 
