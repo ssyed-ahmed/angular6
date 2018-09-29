@@ -47,7 +47,8 @@ export class DashboardComponent implements OnInit {
   getHeroes(): void {
     this.heroService.getHeroes()
       .subscribe(heroes => {
-        this.heroes = heroes.slice(0, 9);
+        // this.heroes = heroes.slice(0, 9);
+        this.heroes = heroes;
       })
     var message = new Message('Fetched heroes in dashboard.', Severity.INFO, new Date(), null);
     this.messageService.add(message);

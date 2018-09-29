@@ -19,6 +19,8 @@ export class HeroesComponent implements OnInit {
   heroToDelete;
   selectedId;
 
+  heroModel = new Hero(0, '', 'default', '', 'Male');
+
   subscription: Subscription;
 
   constructor(

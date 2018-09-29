@@ -1,13 +1,8 @@
 export class Hero {
-    id: number;
-    name: string;
-    icon: string;
-    description: string;
-
-    constructor(id: number, name: string, icon: string, description: string) {
-        this.id = id;
-        this.name = name;
-        this.icon = icon;
-        this.description = description;
-    }
+    constructor(
+        public id: number, 
+        public name: string, 
+        public icon: string, 
+        public description: string, 
+        public sex: string) {}
 }
