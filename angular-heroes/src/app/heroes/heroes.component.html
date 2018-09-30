@@ -78,7 +78,9 @@
                     <form #addHeroForm="ngForm">
                       <!-- {{ addHeroForm.value | json }}
                       <hr>
-                      {{ heroModel | json }} -->
+                      {{ heroModel | json }}
+                      <hr>
+                      {{ addHeroForm.form.invalid }} -->
 
                       <div class="form-group row">
                         <label for="name" class="col-sm-3 col-form-label">Name:</label>
@@ -125,7 +127,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
-              <button type="button" class="btn btn-primary" (click)="add(heroName.value); heroName.value=''">OK</button>
+              <button [disabled]="addHeroForm.form.invalid" type="button" class="btn btn-primary" (click)="add(heroName.value); heroName.value=''">OK</button>
             </div>
           </div>
         </div>
