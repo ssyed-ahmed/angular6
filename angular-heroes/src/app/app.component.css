@@ -65,6 +65,7 @@ nav a:active {
 }
 .refresh-style {
     padding-top: 10px;
+    padding-right: 5px;
     float: right;
     cursor: pointer;
 }
