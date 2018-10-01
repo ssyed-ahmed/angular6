@@ -30,7 +30,7 @@
           <td class="hero-detail-link" (click)="selectHero(hero.id, 'heroes')">{{hero.name}}</td>
           <td>{{hero.description}}</td>
           <td>
-            <i class="fas fa-edit action-link" (click)="editHero(hero)"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="fas fa-edit action-link" (click)="launchEditHero(hero)" data-toggle="modal" data-target="#editHeroModal"></i>&nbsp;&nbsp;&nbsp;&nbsp;
             <i class="fas fa-times action-link" (click)="deleteHero(hero)" data-toggle="modal" data-target="#deleteHeroModal"></i>
           </td>
         </tr>
@@ -89,7 +89,7 @@
                               (keyup)="validateIdRange(heroId.value);validateIdDuplicate(heroId.value)" 
                               type="number" #heroId="ngModel" 
                               [class.is-invalid]="heroId.invalid && heroId.touched" class="form-control" 
-                              placeholder="Id" name="heroId" [(ngModel)]="heroModel.id" required>
+                              placeholder="Id" name="heroId" [(ngModel)]="heroModel.id" required>                            
                               <small class="text-danger" *ngIf="idHasRangeError"><i class="fas fa-times-circle error-style"></i> Id should be between 1 and 100 inclusive.</small>
                               <small class="text-danger" *ngIf="idHasDuplicateError"><i class="fas fa-times-circle error-style"></i> Id already exists. Please choose a different value.</small>
                               <div *ngIf="heroId.errors && (heroId.invalid || heroId.touched)">
@@ -144,6 +144,96 @@
             <div class="modal-footer">
               <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
               <button [disabled]="addHeroForm.form.invalid" type="button" class="btn btn-primary" (click)="addHero()" data-dismiss="modal">OK</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal end -->
+
+    <!-- Edit hero modal template-->
+    <!-- Modal -->
+    <div *ngIf="heroToEdit" class="modal fade" id="editHeroModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document" data-backdrop="static">
+          <div class="modal-content">
+            <div class="modal-header hero-modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Add hero</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true" class="close-style">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <form #addHeroForm="ngForm" novalidate>
+                      <!-- {{ addHeroForm.value | json }}
+                      <hr>
+                      {{ heroModel | json }}
+                      <hr>
+                      {{ addHeroForm.form.invalid }} -->
+                     
+                      <div class="form-group row">
+                          <label for="heroId" class="col-sm-3 col-form-label">Id:</label>
+                          <div class="col-sm-9">
+                            <input disabled (blur)="validateIdRange(heroId.value);validateIdDuplicate(heroId.value)" 
+                              (keyup)="validateIdRange(heroId.value);validateIdDuplicate(heroId.value)" 
+                              type="number" #heroId="ngModel" 
+                              [class.is-invalid]="heroId.invalid && heroId.touched" class="form-control" 
+                              placeholder="Id" name="heroId" [(ngModel)]="heroToEdit.id" required>                            
+                              <small class="text-danger" *ngIf="idHasRangeError"><i class="fas fa-times-circle error-style"></i> Id should be between 1 and 100 inclusive.</small>
+                              <small class="text-danger" *ngIf="idHasDuplicateError"><i class="fas fa-times-circle error-style"></i> Id already exists. Please choose a different value.</small>
+                              <div *ngIf="heroId.errors && (heroId.invalid || heroId.touched)">
+                                  <small class="text-danger" *ngIf="heroId.errors.required"><i class="fas fa-times-circle error-style"></i> Id is required.</small>
+                              </div>
+                          </div>
+                        </div>
+
+                      <div class="form-group row">
+                        <label for="name" class="col-sm-3 col-form-label">Name:</label>
+                        <div class="col-sm-9">
+                          <input type="text" #name="ngModel" [class.is-invalid]="name.invalid && name.touched" class="form-control" 
+                            placeholder="Name" name="name" [(ngModel)]="heroToEdit.name" required>
+                            <small [class.d-none]="name.valid || name.untouched" class="text-danger"><i class="fas fa-times-circle error-style"></i> Name is required.</small>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <label for="description" class="col-sm-3 col-form-label">Description:</label>
+                        <div class="col-sm-9">
+                          <textarea name="description" placeholder="Description" class="form-control" cols="30" rows="3" [(ngModel)]="heroToEdit.description"></textarea>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="col-sm-3">
+                              <label for="sex" class="col-form-label">Sex:</label>
+                          </div>
+                          <div class="col-sm-9">
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="sex" id="maleOption" value="Male" checked [(ngModel)]="heroToEdit.sex">
+                              <label class="form-check-label" for="maleOption">
+                                Male
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="sex" id="femaleOption" value="Female" [(ngModel)]="heroToEdit.sex">
+                              <label class="form-check-label" for="femaleOption">
+                                Female
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+              <button [disabled]="addHeroForm.form.invalid" type="button" class="btn btn-primary" (click)="editHero()" data-dismiss="modal">OK</button>
             </div>
           </div>
         </div>

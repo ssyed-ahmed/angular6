@@ -20,8 +20,9 @@ export class HeroesComponent implements OnInit {
   selectedId;
   idHasDuplicateError = false;
   idHasRangeError = false;
-
+  
   heroModel = new Hero(1, '', 'default', '', 'Male');
+  heroToEdit;
 
   subscription: Subscription;
 
@@ -63,25 +64,25 @@ export class HeroesComponent implements OnInit {
   }
 
   addHero(): void {
-    console.log(this.heroModel);
     let newHero = new Hero(this.heroModel.id, this.heroModel.name, 'default', this.heroModel.description, this.heroModel.sex);
     this.heroService.addHero(newHero)
       .subscribe(hero => {
         this.heroes.push(hero);
         // Reset the heroModel
         this.heroModel = new Hero(1, '', 'default', '', 'Male');
-      })
-    
-    // name = name.trim();
-    // if (!name) {
-    //   return;
-    // }
-    
+      })    
   }
 
-  editHero(hero: Hero): void {
-    console.log('Edit hero clicked');
-    console.log(hero);
+  launchEditHero(hero: Hero): void {
+    this.heroToEdit = hero;    
+  }
+
+  editHero() {
+    this.heroService.updateHero(this.heroToEdit)
+    .subscribe(() => {
+      // Reset the flag
+      this.heroToEdit = null;
+    });
   }
 
   deleteHero(hero: Hero): void {
