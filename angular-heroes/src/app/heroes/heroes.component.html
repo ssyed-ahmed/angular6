@@ -81,8 +81,7 @@
                       {{ heroModel | json }}
                       <hr>
                       {{ addHeroForm.form.invalid }} -->
-                      {{heroId.errors | json }}
-
+                     
                       <div class="form-group row">
                           <label for="heroId" class="col-sm-3 col-form-label">Id:</label>
                           <div class="col-sm-9">
@@ -144,7 +143,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
-              <button [disabled]="addHeroForm.form.invalid" type="button" class="btn btn-primary" (click)="addHero()">OK</button>
+              <button [disabled]="addHeroForm.form.invalid" type="button" class="btn btn-primary" (click)="addHero()" data-dismiss="modal">OK</button>
             </div>
           </div>
         </div>
