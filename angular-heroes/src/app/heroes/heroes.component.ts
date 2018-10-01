@@ -18,6 +18,8 @@ export class HeroesComponent implements OnInit {
   public displayDeleteDialog = 'none';
   heroToDelete;
   selectedId;
+  idHasDuplicateError = false;
+  idHasRangeError = false;
 
   heroModel = new Hero(0, '', 'default', '', 'Male');
 
@@ -60,15 +62,16 @@ export class HeroesComponent implements OnInit {
     this.router.navigate([id, fromState], {relativeTo: this.route});
   }
 
-  addHero(name: string): void {
-    name = name.trim();
-    if (!name) {
-      return;
-    }
-    this.heroService.addHero({name} as Hero)
-      .subscribe(hero => {
-        this.heroes.push(hero);
-      })
+  addHero(): void {
+    console.log(this.heroModel);
+    // name = name.trim();
+    // if (!name) {
+    //   return;
+    // }
+    // this.heroService.addHero({name} as Hero)
+    //   .subscribe(hero => {
+    //     this.heroes.push(hero);
+    //   })
   }
 
   editHero(hero: Hero): void {
@@ -93,5 +96,30 @@ export class HeroesComponent implements OnInit {
 
   isSelected(hero): boolean {
     return hero.id === this.selectedId;
+  }
+
+  validateIdDuplicate(value: number): void {
+    let isPresent = false;
+    for (let i = 0; i < this.heroes.length; i++) {
+      let hero = this.heroes[i];
+      if (hero.id === value) {
+        isPresent = true;
+        break;
+      }
+    }
+
+    if (isPresent) {
+      this.idHasDuplicateError = true;
+    } else {
+      this.idHasDuplicateError = false;
+    }
+  }
+
+  validateIdRange(value: number): void {
+    if (value < 1 || value > 100) {
+      this.idHasRangeError = true;
+    } else {
+      this.idHasRangeError = false;
+    }
   }
 }
