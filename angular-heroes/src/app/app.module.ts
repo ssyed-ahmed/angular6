@@ -15,6 +15,7 @@ import { LogsComponent } from './logs/logs.component';
 import { SectionComponent } from './section/section.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { StatisticsComponent } from './statistics/statistics.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
     LogsComponent,
     SectionComponent,
     PageNotFoundComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,
