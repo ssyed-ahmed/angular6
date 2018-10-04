@@ -52,8 +52,8 @@ label {
 }
 .image-size {
   display: block;
-  max-width: 230px;
-  max-height: 200px;
+  max-width: 330px;
+  max-height: 300px;
   width: auto;
   height: auto;
   margin-top: 10px;
@@ -70,4 +70,7 @@ label {
 .property-value {
   padding-top: 10px;
   padding-bottom: 10px;
+}
+.btn-style {
+  color: #fff;
 }

@@ -8,66 +8,66 @@
   </div>
   <div class="section-body">
       <div class="row">
-        <div class="col-sm-9 details-container">
+        <div class="col-sm-12 details-container">
           <div *ngIf="hero">
             <div class="row">
               <div class="col-sm-12">
-                  <div class="jumbotron">
-                    <div class="row">
-                      <div class="col-sm-9">
-                          <h2>{{hero.name | uppercase }}</h2>
-                          <div class="row">
-                            <div class="col-sm-3 property-title">
-                              Id:
+                  <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-9">
+                                <h2>{{hero.name | uppercase }}</h2>
+                                <div class="row">
+                                  <div class="col-sm-3 property-title">
+                                    Id:
+                                  </div>
+                                  <div class="col-sm-9 property-value">
+                                    {{ hero.id }}
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-sm-3 property-title">
+                                    Name:
+                                  </div>
+                                  <div class="col-sm-9 property-value">
+                                    {{ hero.name }}
+                                  </div>
+                                </div>                          
+                                <div class="row">
+                                  <div class="col-sm-3 property-title">
+                                    Description:
+                                  </div>
+                                  <div class="col-sm-9 property-value">
+                                    {{ hero.description }}
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-sm-3 property-title">
+                                    Sex:
+                                  </div>
+                                  <div class="col-sm-9 property-value">
+                                    {{ hero.sex }}
+                                  </div>
+                                </div>                          
                             </div>
-                            <div class="col-sm-9 property-value">
-                              {{ hero.id }}
-                            </div>
+                            <div class="col-sm-3">
+                                <div *ngIf="hero">
+                                  <div class="hero-card" style="width: 18rem;">
+                                    <img class="card-img-top image-size" src="./../../assets/{{hero.icon | lowercase}}.png" alt="Card image cap">              
+                                  </div>
+                                </div>
+                              </div>                      
                           </div>
                           <div class="row">
-                            <div class="col-sm-3 property-title">
-                              Name:
-                            </div>
-                            <div class="col-sm-9 property-value">
-                              {{ hero.name }}
-                            </div>
-                          </div>                          
-                          <div class="row">
-                            <div class="col-sm-3 property-title">
-                              Description:
-                            </div>
-                            <div class="col-sm-9 property-value">
-                              {{ hero.description }}
+                            <div class="col-sm-12">
+                                <p class="lead">
+                                  <a (click)="goBack()" class="btn btn-primary btn-lg btn-style" role="button">Go back</a>
+                                </p>
                             </div>
                           </div>
-                          <div class="row">
-                            <div class="col-sm-3 property-title">
-                              Sex:
-                            </div>
-                            <div class="col-sm-9 property-value">
-                              {{ hero.sex }}
-                            </div>
-                          </div>                          
-                      </div>
-                    </div>                    
+                    </div>                                        
                   </div>
               </div>
-            </div>
-                        
-            <!-- <div>
-              <span>id:</span>
-              {{hero.id}}
-            </div>
-            <div>
-              <label>name</label>
-              <input type="text" [(ngModel)]="hero.name" placeholder="name">  
-            </div> -->
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div *ngIf="hero">
-            <div class="hero-card" style="width: 18rem;">
-              <img class="card-img-top image-size" src="./../../assets/{{hero.icon | lowercase}}.png" alt="Card image cap">              
             </div>
           </div>
         </div>
