@@ -13,7 +13,22 @@
             <div *ngFor="let hero of heroes" [class.hero-card-selected]="isSelected(hero)" routerLink="/heroes/{{hero.id}}/dashboard" class="hero-card" style="width: 18rem;">
               <img class="card-img-top image-size" src="./../../assets/{{hero.icon | lowercase}}.png" alt="Card image cap">
               <div class="card-body">
-                <h5 class="hero-card-title">{{hero.name}}</h5>            
+                <hr>
+                <div class="row">
+                  <div class="col-sm-12 text-center hero-card-title">
+                      {{hero.name}}
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-7">
+                      Rating:
+                  </div>
+                  <div class="col-sm-5">
+                      <span *ngFor="let num of hero.rating">
+                        <i class="fas fa-star"></i>
+                      </span>
+                  </div>
+                </div>
               </div>
             </div>
         </div>

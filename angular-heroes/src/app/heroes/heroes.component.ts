@@ -21,7 +21,7 @@ export class HeroesComponent implements OnInit {
   idHasDuplicateError = false;
   idHasRangeError = false;
   
-  heroModel = new Hero(1, '', 'default', '', 'Male');
+  heroModel = new Hero(1, '', 'default', '', 'Male', Array(2));
   heroToEdit;
 
   subscription: Subscription;
@@ -64,12 +64,12 @@ export class HeroesComponent implements OnInit {
   }
 
   addHero(): void {
-    let newHero = new Hero(this.heroModel.id, this.heroModel.name, 'default', this.heroModel.description, this.heroModel.sex);
+    let newHero = new Hero(this.heroModel.id, this.heroModel.name, 'default', this.heroModel.description, this.heroModel.sex, Array(2));
     this.heroService.addHero(newHero)
       .subscribe(hero => {
         this.heroes.push(hero);
         // Reset the heroModel
-        this.heroModel = new Hero(1, '', 'default', '', 'Male');
+        this.heroModel = new Hero(1, '', 'default', '', 'Male', Array(2));
       })    
   }
 

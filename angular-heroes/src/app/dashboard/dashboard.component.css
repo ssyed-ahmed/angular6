@@ -86,14 +86,14 @@ h4 {
     border: 1px solid gold;
     padding: 10px;
     margin: 10px;
-    background-color: #888;
+    background-color: lightblue;
     left: .5em;
     cursor: pointer;
 }
 .image-size {
     display: block;
-    max-width: 230px;
-    max-height: 200px;
+    max-width: 180px;
+    max-height: 150px;
     width: auto;
     height: auto;
     margin-top: 10px;
@@ -123,6 +123,9 @@ h4 {
 .section-title {
     padding-left: 25px;
     font-size: 1.25rem;
+}
+.align-right {
+    float: right;
 }
 
 @media (max-width: 600px) {
