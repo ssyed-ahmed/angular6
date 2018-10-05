@@ -49,6 +49,16 @@
                                     {{ hero.sex }}
                                   </div>
                                 </div>                          
+                                <div class="row">
+                                  <div class="col-sm-3 property-title">
+                                    Rating:
+                                  </div>
+                                  <div class="col-sm-9 property-value">
+                                      <span *ngFor="let num of hero.rating">
+                                        <i class="fas fa-star rating-style"></i>
+                                      </span>
+                                  </div>
+                                </div> 
                             </div>
                             <div class="col-sm-3">
                                 <div *ngIf="hero">

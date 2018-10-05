@@ -21,6 +21,7 @@
          <td>Id</td>
          <td>Name</td>
          <td>Description</td>
+         <td>Rating</td>
          <td>Action</td>
        </tr> 
       </thead>
@@ -29,6 +30,11 @@
           <td>{{hero.id}}</td>
           <td class="hero-detail-link" (click)="selectHero(hero.id, 'heroes')">{{hero.name}}</td>
           <td>{{hero.description}}</td>
+          <td>
+            <span *ngFor="let num of hero.rating">
+              <i class="fas fa-star rating-style"></i>
+            </span>
+          </td>
           <td>
             <i class="fas fa-edit action-link" (click)="launchEditHero(hero)" data-toggle="modal" data-target="#editHeroModal"></i>&nbsp;&nbsp;&nbsp;&nbsp;
             <i class="fas fa-times action-link" (click)="deleteHero(hero)" data-toggle="modal" data-target="#deleteHeroModal"></i>

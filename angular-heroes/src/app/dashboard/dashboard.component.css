@@ -124,8 +124,8 @@ h4 {
     padding-left: 25px;
     font-size: 1.25rem;
 }
-.align-right {
-    float: right;
+.rating-style {
+    color: gold;
 }
 
 @media (max-width: 600px) {
