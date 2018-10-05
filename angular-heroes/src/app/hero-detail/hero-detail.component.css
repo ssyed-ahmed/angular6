@@ -72,5 +72,5 @@ label {
   padding-bottom: 10px;
 }
 .btn-style {
-  color: #fff;
+  color: #fff !important;
 }

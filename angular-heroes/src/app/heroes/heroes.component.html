@@ -83,7 +83,7 @@
                       {{ addHeroForm.form.invalid }} -->
                      
                       <div class="form-group row">
-                          <label for="heroId" class="col-sm-3 col-form-label">Id:</label>
+                          <label for="heroId" class="col-sm-3 col-form-label label-text">Id <span class="text-danger">*</span> :</label>
                           <div class="col-sm-9">
                             <input (blur)="validateIdRange(heroId.value);validateIdDuplicate(heroId.value)" 
                               (keyup)="validateIdRange(heroId.value);validateIdDuplicate(heroId.value)" 
@@ -99,7 +99,7 @@
                         </div>
 
                       <div class="form-group row">
-                        <label for="name" class="col-sm-3 col-form-label">Name:</label>
+                        <label for="name" class="col-sm-3 col-form-label label-text">Name <span class="text-danger">*</span> :</label>
                         <div class="col-sm-9">
                           <input type="text" #name="ngModel" [class.is-invalid]="name.invalid && name.touched" class="form-control" 
                             placeholder="Name" name="name" [(ngModel)]="heroModel.name" required>
@@ -108,7 +108,7 @@
                       </div>
 
                       <div class="form-group row">
-                        <label for="description" class="col-sm-3 col-form-label">Description:</label>
+                        <label for="description" class="col-sm-3 col-form-label label-text">Description:</label>
                         <div class="col-sm-9">
                           <textarea name="description" placeholder="Description" class="form-control" cols="30" rows="3" [(ngModel)]="heroModel.description"></textarea>
                         </div>
@@ -117,7 +117,7 @@
                       <div class="form-group">
                         <div class="row">
                           <div class="col-sm-3">
-                              <label for="sex" class="col-form-label">Sex:</label>
+                              <label for="sex" class="col-form-label label-text">Sex <span class="text-danger">*</span> :</label>
                           </div>
                           <div class="col-sm-9">
                             <div class="form-check">
@@ -173,7 +173,7 @@
                       {{ addHeroForm.form.invalid }} -->
                      
                       <div class="form-group row">
-                          <label for="heroId" class="col-sm-3 col-form-label">Id:</label>
+                          <label for="heroId" class="col-sm-3 col-form-label label-text">Id <span class="text-danger">*</span> :</label>
                           <div class="col-sm-9">
                             <input disabled (blur)="validateIdRange(heroId.value);validateIdDuplicate(heroId.value)" 
                               (keyup)="validateIdRange(heroId.value);validateIdDuplicate(heroId.value)" 
@@ -189,7 +189,7 @@
                         </div>
 
                       <div class="form-group row">
-                        <label for="name" class="col-sm-3 col-form-label">Name:</label>
+                        <label for="name" class="col-sm-3 col-form-label label-text">Name <span class="text-danger">*</span> :</label>
                         <div class="col-sm-9">
                           <input type="text" #name="ngModel" [class.is-invalid]="name.invalid && name.touched" class="form-control" 
                             placeholder="Name" name="name" [(ngModel)]="heroToEdit.name" required>
@@ -198,7 +198,7 @@
                       </div>
 
                       <div class="form-group row">
-                        <label for="description" class="col-sm-3 col-form-label">Description:</label>
+                        <label for="description" class="col-sm-3 col-form-label label-text">Description:</label>
                         <div class="col-sm-9">
                           <textarea name="description" placeholder="Description" class="form-control" cols="30" rows="3" [(ngModel)]="heroToEdit.description"></textarea>
                         </div>
@@ -207,7 +207,7 @@
                       <div class="form-group">
                         <div class="row">
                           <div class="col-sm-3">
-                              <label for="sex" class="col-form-label">Sex:</label>
+                              <label for="sex" class="col-form-label label-text">Sex <span class="text-danger">*</span> :</label>
                           </div>
                           <div class="col-sm-9">
                             <div class="form-check">
