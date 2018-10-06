@@ -4,6 +4,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { HeroService } from 'src/app/hero.service';
 import { Location } from '@angular/common';
 import { ParamMap } from '@angular/router/src/shared';
+import { Subscription } from 'rxjs';
+import { CommunicationService } from '../communication.service';
 
 @Component({
   selector: 'app-hero-detail',
@@ -16,12 +18,21 @@ export class HeroDetailComponent implements OnInit {
   title: string = 'Hero Details';
   heroId;
   fromState;
+  subscription: Subscription;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute, 
     private heroService: HeroService, 
-    private location: Location) { }
+    private location: Location,
+    private communicationService: CommunicationService) {
+      // Subscribe to the hero detail general component message
+    this.subscription = this.communicationService.getMessage().subscribe(message => {
+      if (message.content === 'go back') {
+        this.goBack();
+      }
+    })
+  }
 
   ngOnInit() {
     this.getHero();    

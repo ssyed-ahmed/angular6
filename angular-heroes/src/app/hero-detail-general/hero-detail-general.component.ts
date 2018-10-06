@@ -3,6 +3,7 @@ import { Hero } from '../hero';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HeroService } from 'src/app/hero.service';
 import { ParamMap } from '@angular/router/src/shared';
+import { CommunicationService } from '../communication.service';
 
 @Component({
   selector: 'app-hero-detail-general',
@@ -14,7 +15,8 @@ export class HeroDetailGeneralComponent implements OnInit {
   hero: Hero;
   
   constructor(private route: ActivatedRoute,
-    private heroService: HeroService) {
+    private heroService: HeroService,
+    private communicationService: CommunicationService) {
     this.route.parent.params.subscribe(params => {
       let id = parseInt(params.id);
       this.heroService.getHero(id)
@@ -25,6 +27,10 @@ export class HeroDetailGeneralComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  goBack(): void {
+    this.communicationService.sendMessage('go back');
   }
 
 }
