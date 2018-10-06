@@ -7,17 +7,24 @@ import { LogsComponent } from 'src/app/logs/logs.component';
 import { PageNotFoundComponent } from 'src/app/page-not-found/page-not-found.component';
 import { StatisticsComponent } from 'src/app/statistics/statistics.component';
 import { HeroDetailGeneralComponent } from 'src/app/hero-detail-general/hero-detail-general.component';
+import { HeroDetailStatsComponent } from 'src/app/hero-detail-stats/hero-detail-stats.component';
 
 const routes: Routes = [
   { path: 'heroes', component: HeroesComponent },
   { path: 'dashboard', component: DashboardComponent },
   // { path: 'heroes/:id/:fromState', component: HeroDetailComponent },
   {
-    path: 'heroes',
+    path: 'heroes/:id/:fromState',
+    component: HeroDetailComponent,
     children: [
+      { path: '', redirectTo: 'overview', pathMatch: 'full'},
       {
-        path: ':id/:fromState',
-        component: HeroDetailComponent
+        path: 'overview',
+        component: HeroDetailGeneralComponent
+      },
+      {
+        path: 'statistics',
+        component: HeroDetailStatsComponent
       }
     ]
   },

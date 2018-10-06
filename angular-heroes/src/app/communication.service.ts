@@ -10,8 +10,8 @@ export class CommunicationService {
 
   constructor() { }
 
-  sendMessage(message: string) {
-    this.subject.next({text: message});
+  sendMessage(message: any) {
+    this.subject.next({content: message});
   }
 
   clearMessage(): void {

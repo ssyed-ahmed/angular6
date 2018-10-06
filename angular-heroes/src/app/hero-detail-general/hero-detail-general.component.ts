@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Hero } from '../hero';
+import { Router, ActivatedRoute } from '@angular/router';
+import { HeroService } from 'src/app/hero.service';
+import { ParamMap } from '@angular/router/src/shared';
 
 @Component({
   selector: 'app-hero-detail-general',
@@ -7,7 +11,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroDetailGeneralComponent implements OnInit {
 
-  constructor() { }
+  hero: Hero;
+  
+  constructor(private route: ActivatedRoute,
+    private heroService: HeroService) {
+    this.route.parent.params.subscribe(params => {
+      let id = parseInt(params.id);
+      this.heroService.getHero(id)
+      .subscribe(hero => { 
+        this.hero = hero
+      });
+    })
+  }
 
   ngOnInit() {
   }
