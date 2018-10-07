@@ -42,3 +42,6 @@
     display: table-cell;
     vertical-align: middle;
 }
+.spacer {
+    padding-top: 40px;
+}
