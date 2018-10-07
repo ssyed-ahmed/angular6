@@ -5,6 +5,7 @@ export class Hero {
         public icon: string, 
         public description: string, 
         public sex: string,
-        public rating: number[]) {}
+        public rating: number[],
+        public stats: object = {}) {}
         
 }
