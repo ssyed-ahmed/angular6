@@ -18,6 +18,7 @@ import { SectionComponent } from './section/section.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { StatisticsComponent } from './statistics/statistics.component';
+import { HeroDetailCrimessolvedStatsComponent } from './hero-detail-crimessolved-stats/hero-detail-crimessolved-stats.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { StatisticsComponent } from './statistics/statistics.component';
     SectionComponent,
     PageNotFoundComponent,
     HeroSearchComponent,
-    StatisticsComponent
+    StatisticsComponent,
+    HeroDetailCrimessolvedStatsComponent
   ],
   imports: [
     BrowserModule,

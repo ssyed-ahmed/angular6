@@ -9,6 +9,19 @@ export class InMemoryDataService implements InMemoryDbService {
 
   constructor() { }
 
+  generateRandomInteger(min, max): number {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  generateRandomDataArray() {
+    let data = [];
+    for (let i = 0; i < 10; i++) {
+      let num = this.generateRandomInteger(1, 25);
+      data.push(num);
+    }
+    return data;
+  }
+
   createDb() {
     const heroes = [
       new Hero(11, 'Antman', 'antman', 'This is ant man.', 'Male', Array(3), 
@@ -20,7 +33,10 @@ export class InMemoryDataService implements InMemoryDbService {
           arms: '0.17 in',
           waist: '0.35 in',
           thighs: '0.27 in'
-        }	
+        },
+        "crimesSolvedStats": {
+          lineData: this.generateRandomDataArray()
+        }
       }),
       new Hero(12, 'Batman', 'batman', 'This is bat man.', 'Male', Array(4), 
       {
@@ -31,7 +47,12 @@ export class InMemoryDataService implements InMemoryDbService {
           arms: '17 in',
           waist: '35 in',
           thighs: '27 in'
-        }	
+        },
+        "crimesSolvedStats": {
+          lineData: [
+            12, 13, 15, 19, 7, 11, 25, 20, 5, 19, 21
+          ]
+        }
       }),
       new Hero(13, 'Hulk', 'hulk', 'This is hulk.', 'Male', Array(5), 
       {
@@ -42,7 +63,12 @@ export class InMemoryDataService implements InMemoryDbService {
           arms: '68 in',
           waist: '85 in',
           thighs: '66 in'
-        }	
+        },
+        "crimesSolvedStats": {
+          lineData: [
+            10, 12, 15, 9, 4, 17, 20, 22, 10, 15, 21
+          ]
+        }
       }),
       new Hero(14, 'Ironman', 'ironman', 'This is iron man.', 'Male', Array(4), 
       {
@@ -53,7 +79,10 @@ export class InMemoryDataService implements InMemoryDbService {
           arms: '13 in',
           waist: '32 in',
           thighs: '22 in'
-        }	
+        },
+        "crimesSolvedStats": {
+          lineData: this.generateRandomDataArray()
+        }
       }),
       new Hero(15, 'Spiderman', 'spiderman', 'This is spider man.', 'Male', Array(5), 
       {
@@ -64,7 +93,10 @@ export class InMemoryDataService implements InMemoryDbService {
           arms: '13 in',
           waist: '28 in',
           thighs: '22 in'
-        }	
+        },
+        "crimesSolvedStats": {
+          lineData: this.generateRandomDataArray()
+        }
       }),
       new Hero(16, 'Superman', 'superman', 'This is super man.', 'Male', Array(5),
       {
@@ -75,7 +107,10 @@ export class InMemoryDataService implements InMemoryDbService {
           arms: '18 in',
           waist: '37 in',
           thighs: '27 in'
-        }	
+        },
+        "crimesSolvedStats": {
+          lineData: this.generateRandomDataArray()
+        }
       }),
       new Hero(17, 'Wonderwoman', 'wonderwoman', 'This is wonder woman.', 'Female', Array(3), 
       {
@@ -86,7 +121,10 @@ export class InMemoryDataService implements InMemoryDbService {
           arms: '11 in',
           waist: '29 in',
           thighs: '19 in'
-        }	
+        },
+        "crimesSolvedStats": {
+          lineData: this.generateRandomDataArray()
+        }
       }),
       new Hero(18, 'Green lantern', 'greenlantern', 'This is green lantern.', 'Male', Array(3), 
       {
@@ -97,7 +135,10 @@ export class InMemoryDataService implements InMemoryDbService {
           arms: '15 in',
           waist: '30 in',
           thighs: '24 in'
-        }	
+        },
+        "crimesSolvedStats": {
+          lineData: this.generateRandomDataArray()
+        }
       }),
       new Hero(19, 'Mocking bird', 'mockingbird', 'This is mocking bird.', 'Female', Array(3), 
       {
@@ -108,7 +149,10 @@ export class InMemoryDataService implements InMemoryDbService {
           arms: '10 in',
           waist: '27 in',
           thighs: '18 in'
-        }	
+        },
+        "crimesSolvedStats": {
+          lineData: this.generateRandomDataArray()
+        }
       }),
       new Hero(20, 'Black widow', 'blackwidow', 'This is black widow.', 'Female', Array(4), 
       {
@@ -119,7 +163,10 @@ export class InMemoryDataService implements InMemoryDbService {
           arms: '10 in',
           waist: '26 in',
           thighs: '18 in'
-        }	
+        },
+        "crimesSolvedStats": {
+          lineData: this.generateRandomDataArray()
+        }
       }),
       new Hero(21, 'New hero', 'default', 'This is default hero.', 'Male', Array(2), 
       {
@@ -130,7 +177,10 @@ export class InMemoryDataService implements InMemoryDbService {
           arms: '16 in',
           waist: '32 in',
           thighs: '22 in'
-        }	
+        },
+        "crimesSolvedStats": {
+          lineData: this.generateRandomDataArray()
+        }
       })
     ];
 

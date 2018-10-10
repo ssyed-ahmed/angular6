@@ -70,4 +70,8 @@ export class HeroDetailComponent implements OnInit {
   showStatistics(): void {
     this.router.navigate(['statistics'], {relativeTo: this.route});
   }
+
+  showCrimesSolved(): void {
+    this.router.navigate(['crimessolved'], {relativeTo: this.route});
+  }
 }

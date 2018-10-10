@@ -8,6 +8,7 @@ import { PageNotFoundComponent } from 'src/app/page-not-found/page-not-found.com
 import { StatisticsComponent } from 'src/app/statistics/statistics.component';
 import { HeroDetailGeneralComponent } from 'src/app/hero-detail-general/hero-detail-general.component';
 import { HeroDetailStatsComponent } from 'src/app/hero-detail-stats/hero-detail-stats.component';
+import { HeroDetailCrimessolvedStatsComponent } from 'src/app/hero-detail-crimessolved-stats/hero-detail-crimessolved-stats.component';
 
 const routes: Routes = [
   { path: 'heroes', component: HeroesComponent },
@@ -25,6 +26,10 @@ const routes: Routes = [
       {
         path: 'statistics',
         component: HeroDetailStatsComponent
+      },
+      {
+        path: 'crimessolved',
+        component: HeroDetailCrimessolvedStatsComponent
       }
     ]
   },

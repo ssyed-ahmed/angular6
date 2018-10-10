@@ -6,6 +6,6 @@ export class Hero {
         public description: string, 
         public sex: string,
         public rating: number[],
-        public stats: object = {}) {}
+        public stats: any = {}) {}
         
 }
