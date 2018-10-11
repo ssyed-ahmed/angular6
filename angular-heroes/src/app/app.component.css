@@ -75,3 +75,9 @@ nav a:active {
 .no-right-padding {
     padding-right: 0;
 }
+
+@media (max-width: 320px) {
+    .no-padding {
+        padding-left: -10px;
+    }
+}

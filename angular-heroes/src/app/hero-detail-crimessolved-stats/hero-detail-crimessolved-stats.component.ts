@@ -15,7 +15,10 @@ export class HeroDetailCrimessolvedStatsComponent implements AfterViewInit {
 
   hero: Hero;
   months: string[] = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  chartData = [];
   lineChart = [];
+  pieChart = [];
+  pieLabels = ['Red', 'Blue', 'Green', 'Yellow', 'Orange', 'Purple', 'Black', 'Cyan', 'Pink', 'gold', 'crimson'];
   canvas: any;
   ctx: any;
   
@@ -28,6 +31,7 @@ export class HeroDetailCrimessolvedStatsComponent implements AfterViewInit {
       .subscribe(hero => { 
         this.hero = hero;
         this.drawLineChart();
+        this.drawPieChart();
       });
     })
   }
@@ -42,14 +46,15 @@ export class HeroDetailCrimessolvedStatsComponent implements AfterViewInit {
   }
 
   drawLineChart(): void {
-    let chartData = this.hero.stats.crimesSolvedStats.lineData;
+    this.chartData = this.hero.stats.crimesSolvedStats.lineData;
+    console.log(this.chartData);
     this.lineChart = new Chart('lineCanvas', {
       type: 'line',
       data: {
         labels: this.months,
         datasets: [
           {
-            data: chartData,
+            data: this.chartData,
             borderColor: '#3cba9f',
             fill: false
           }
@@ -77,6 +82,29 @@ export class HeroDetailCrimessolvedStatsComponent implements AfterViewInit {
         }
       }
     });
+  }
+
+  drawPieChart(): void {
+    this.pieChart = new Chart('pieCanvas', {
+      type: 'doughnut',
+      data: {
+        datasets: [
+          {
+            data: this.chartData
+          }
+        ],
+        labels: this.pieLabels
+      },
+      options: {
+        title: {
+          display: true,
+          text: 'Crimes solved'
+        },
+        legend: {
+          display: false
+        }
+      }
+    })
   }
 
 }

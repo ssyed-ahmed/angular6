@@ -15,7 +15,7 @@ export class InMemoryDataService implements InMemoryDbService {
 
   generateRandomDataArray() {
     let data = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 12; i++) {
       let num = this.generateRandomInteger(1, 25);
       data.push(num);
     }
@@ -49,9 +49,7 @@ export class InMemoryDataService implements InMemoryDbService {
           thighs: '27 in'
         },
         "crimesSolvedStats": {
-          lineData: [
-            12, 13, 15, 19, 7, 11, 25, 20, 5, 19, 21
-          ]
+          lineData: this.generateRandomDataArray()
         }
       }),
       new Hero(13, 'Hulk', 'hulk', 'This is hulk.', 'Male', Array(5), 
@@ -65,9 +63,7 @@ export class InMemoryDataService implements InMemoryDbService {
           thighs: '66 in'
         },
         "crimesSolvedStats": {
-          lineData: [
-            10, 12, 15, 9, 4, 17, 20, 22, 10, 15, 21
-          ]
+          lineData: this.generateRandomDataArray()
         }
       }),
       new Hero(14, 'Ironman', 'ironman', 'This is iron man.', 'Male', Array(4), 

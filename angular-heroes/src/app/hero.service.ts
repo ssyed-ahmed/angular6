@@ -88,7 +88,7 @@ export class HeroService {
       );
   }
 
-  searchHero(term: string): Observable<Hero[]> {
+  searchHeroes(term: string): Observable<Hero[]> {
     if (!term.trim()) {
       return of([]);
     }

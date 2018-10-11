@@ -1,4 +1,4 @@
-<div class="input-group mb-3">
+<!-- <div class="input-group mb-3">
   <input #searchBox id="search-box" (keyup)="search(searchBox.value)" class="form-control" placeholder="Search text" aria-label="Search text">
   <ul class="search-result">
     <li *ngFor="let hero of heroes$ | async">
@@ -7,4 +7,24 @@
       </a>
     </li>
   </ul>
+</div> -->
+
+
+<div class="input-group mb-3">
+  <div class="row">
+    <div class="col-sm-12">
+      <input #searchBox id="search-box" (keyup)="search(searchBox.value)" class="form-control" placeholder="Search text" aria-label="Search text">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <ul class="search-result">
+        <li *ngFor="let hero of heroes$ | async">
+          <a routerLink="/heroes/{{hero.id}}/heroes">
+            {{hero.name}}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>    
 </div>
