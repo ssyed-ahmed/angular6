@@ -94,3 +94,8 @@
 .rating-style {
   color: gold;
 }
+@media (max-width: 320px) {
+  .section-title {
+    
+  }
+}
