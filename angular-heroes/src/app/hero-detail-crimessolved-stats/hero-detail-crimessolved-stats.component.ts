@@ -37,8 +37,7 @@ export class HeroDetailCrimessolvedStatsComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    // this.drawLineChart();
-    // console.log(this.hero);
+    
   }
 
   goBack(): void {
@@ -47,7 +46,6 @@ export class HeroDetailCrimessolvedStatsComponent implements AfterViewInit {
 
   drawLineChart(): void {
     this.chartData = this.hero.stats.crimesSolvedStats.lineData;
-    console.log(this.chartData);
     this.lineChart = new Chart('lineCanvas', {
       type: 'line',
       data: {
@@ -105,8 +103,6 @@ export class HeroDetailCrimessolvedStatsComponent implements AfterViewInit {
       percentage = parseFloat(percentage.toFixed(2));
       return percentage;
     });
-
-    console.log(pieArray);
 
     this.pieChart = new Chart('pieCanvas', {
       type: 'doughnut',
