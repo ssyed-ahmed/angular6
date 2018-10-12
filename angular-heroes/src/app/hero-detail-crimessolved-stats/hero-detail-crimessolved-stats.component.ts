@@ -18,7 +18,7 @@ export class HeroDetailCrimessolvedStatsComponent implements AfterViewInit {
   chartData = [];
   lineChart = [];
   pieChart = [];
-  pieLabels = ['Red', 'Blue', 'Green', 'Yellow', 'Orange', 'Purple', 'Black', 'Cyan', 'Pink', 'gold', 'crimson'];
+  pieColors = ['Red', 'Blue', 'Green', 'Yellow', 'Orange', 'Purple', 'Black', 'brown', 'aqua', 'gray', 'crimson', 'violet'];
   canvas: any;
   ctx: any;
   
@@ -68,6 +68,20 @@ export class HeroDetailCrimessolvedStatsComponent implements AfterViewInit {
         legend: {
           display: false
         },
+        annotation: {
+          annotations: [{
+            type: 'line',
+            mode: 'horizontal',
+            scaleID: 'y-axis-0',
+            value: 30,
+            borderColor: 'red',
+            borderWidth: 4,
+            label: {
+              enabled: false,
+              content: 'Test label'
+            }
+          }]
+        },
         scales: {
           xAxes: [
             {
@@ -85,20 +99,30 @@ export class HeroDetailCrimessolvedStatsComponent implements AfterViewInit {
   }
 
   drawPieChart(): void {
+    const max = 30;
+    let pieArray = this.chartData.map((currentValue) => {
+      let percentage = currentValue / max * 100;
+      percentage = parseFloat(percentage.toFixed(2));
+      return percentage;
+    });
+
+    console.log(pieArray);
+
     this.pieChart = new Chart('pieCanvas', {
       type: 'doughnut',
       data: {
         datasets: [
           {
-            data: this.chartData
+            data: pieArray,
+            backgroundColor: this.pieColors
           }
         ],
-        labels: this.pieLabels
+        labels: this.months
       },
       options: {
         title: {
           display: true,
-          text: 'Crimes solved'
+          text: 'Crimes solved % per month'
         },
         legend: {
           display: false

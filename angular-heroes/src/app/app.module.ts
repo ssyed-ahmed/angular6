@@ -19,7 +19,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { HeroDetailCrimessolvedStatsComponent } from './hero-detail-crimessolved-stats/hero-detail-crimessolved-stats.component';
-import { HeroCardDirective } from './hero-card.directive';
 
 @NgModule({
   declarations: [
@@ -35,8 +34,7 @@ import { HeroCardDirective } from './hero-card.directive';
     PageNotFoundComponent,
     HeroSearchComponent,
     StatisticsComponent,
-    HeroDetailCrimessolvedStatsComponent,
-    HeroCardDirective
+    HeroDetailCrimessolvedStatsComponent
   ],
   imports: [
     BrowserModule,
