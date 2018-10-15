@@ -20,6 +20,9 @@ export class HeroesComponent implements OnInit {
   selectedId;
   idHasDuplicateError = false;
   idHasRangeError = false;
+  sortNameAscending = true;
+  sortDescAscending = true;
+  sortRatingAscending = true;
   
   heroModel = new Hero(1, '', 'default', '', 'Male', Array(2));
   heroToEdit;
@@ -127,5 +130,38 @@ export class HeroesComponent implements OnInit {
     } else {
       this.idHasRangeError = false;
     }
+  }
+
+  sortByName(): void {
+    this.sortNameAscending = !this.sortNameAscending;
+    this.heroes.sort((a: Hero, b: Hero) => {
+      let sortNum = a.name < b.name ? -1: a.name > b.name ? 1 : 0;
+      if (!this.sortNameAscending) {
+        sortNum = -sortNum;
+      }
+      return sortNum;
+    });
+  }
+
+  sortByDescription(): void {
+    this.sortDescAscending = !this.sortDescAscending;
+    this.heroes.sort((a: Hero, b: Hero) => {
+      let sortNum = a.description < b.description ? -1: a.description > b.description ? 1 : 0;
+      if (!this.sortDescAscending) {
+        sortNum = -sortNum;
+      }
+      return sortNum;
+    });
+  }
+
+  sortByRating(): void {
+    this.sortRatingAscending = !this.sortRatingAscending;
+    this.heroes.sort((a: Hero, b: Hero) => {
+      let sortNum = a.rating.length - b.rating.length;
+      if (!this.sortRatingAscending) {
+        sortNum = -sortNum;
+      }
+      return sortNum;
+    });
   }
 }

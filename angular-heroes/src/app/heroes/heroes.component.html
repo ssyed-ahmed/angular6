@@ -19,9 +19,21 @@
       <thead>
        <tr>
          <td>Id</td>
-         <td>Name</td>
-         <td>Description</td>
-         <td>Rating</td>
+         <td>
+          Name 
+          &nbsp;&nbsp;<i *ngIf="sortNameAscending" class="fas fa-sort-alpha-up sort-style" (click)="sortByName()"></i>
+          <i *ngIf="!sortNameAscending" class="fas fa-sort-alpha-down sort-style" (click)="sortByName()"></i>
+         </td>
+         <td>
+           Description
+           &nbsp;&nbsp;<i *ngIf="sortDescAscending" class="fas fa-sort-alpha-up sort-style" (click)="sortByDescription()"></i>
+           <i *ngIf="!sortDescAscending" class="fas fa-sort-alpha-down sort-style" (click)="sortByDescription()"></i>
+          </td>
+         <td>
+           Rating
+           &nbsp;&nbsp;<i *ngIf="sortRatingAscending" class="fas fa-sort-alpha-up sort-style" (click)="sortByRating()"></i>
+           <i *ngIf="!sortRatingAscending" class="fas fa-sort-alpha-down sort-style" (click)="sortByRating()"></i>
+          </td>
          <td>Action</td>
        </tr> 
       </thead>

@@ -94,6 +94,18 @@
 .rating-style {
   color: gold;
 }
+.sort-style {
+  color: #000;
+}
+.sort-style:hover {
+  color: cornflowerblue;
+  cursor: pointer;
+}
+.sort-style:active {
+  color: cornflowerblue;
+  cursor: pointer;
+}
+
 @media (max-width: 320px) {
   .section-title {
     
