@@ -69,6 +69,7 @@ h4 {
     border: 1px solid #ccc;
     padding: 10px;
     margin: 10px;
+    background-color: lightblue;
 }
 .hero-card-selected {
     float: left;
@@ -77,7 +78,7 @@ h4 {
     border: 1px solid #ccc;
     padding: 10px;
     margin: 10px;
-    border: 2px solid gold;
+    border: 2px solid gold;    
 }
 .hero-card:hover {
     float: left;
@@ -86,7 +87,7 @@ h4 {
     border: 1px solid gold;
     padding: 10px;
     margin: 10px;
-    background-color: lightblue;
+    background-color: lightgreen;
     left: .5em;
     cursor: pointer;
 }
