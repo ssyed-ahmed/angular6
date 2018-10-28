@@ -56,6 +56,9 @@ h2 {
 .no-right-padding {
     padding-right: 0;
 }
+.link-title {
+    padding-left: 10px;
+}
 
 @media (max-width: 320px) {
     .main-title {

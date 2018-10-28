@@ -24,7 +24,7 @@ export class HeroesComponent implements OnInit {
   sortDescAscending = true;
   sortRatingAscending = true;
   
-  heroModel = new Hero(1, '', 'default', '', 'Male', Array(2));
+  heroModel = new Hero(1, '', 'default', '', 'Male', Array(1));
   heroToEdit;
 
   subscription: Subscription;
