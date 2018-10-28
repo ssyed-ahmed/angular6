@@ -11,8 +11,15 @@
       <div class="section-body">
         <div class="row">
           <div class="col-sm-12">
-            <div *ngIf="chart">
-              <canvas id="canvas">{{ chart }}</canvas>
+            <!-- <div *ngIf="barChart">
+              <canvas id="canvas">{{ barChart }}</canvas>
+            </div> -->
+            <div class="chart-style">
+              <div [hidden]="!barChart" class="chart-container">
+                <canvas id="barCanvas">
+                  {{ barChart }}
+                </canvas>
+              </div>        
             </div>
           </div>
         </div>

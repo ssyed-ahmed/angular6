@@ -18,3 +18,13 @@
     padding-left: 25px;
     font-size: 1.25rem;
 }
+.chart-style {
+    width: 50%;
+    height: 50%;
+    position: relative;
+}
+.chart-container {
+    margin: 10px;
+    border: 2px solid #ccc;
+    padding: 10px;
+}

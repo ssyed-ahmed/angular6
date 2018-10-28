@@ -115,7 +115,7 @@ export class InMemoryDataService implements InMemoryDbService {
           weight: '155 lbs',
           chest: '36 in',
           arms: '11 in',
-          waist: '29 in',
+          waist: '27 in',
           thighs: '19 in'
         },
         "crimesSolvedStats": {
