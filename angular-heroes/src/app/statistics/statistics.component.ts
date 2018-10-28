@@ -30,14 +30,16 @@ export class StatisticsComponent implements OnInit {
     this.heroService.getHeroes()
       .subscribe((heroes: Hero[]) => {
         heroes.forEach((hero: Hero) => {
-          let statsData = hero.stats.crimesSolvedStats.lineData;
-          let chartObj = {
-            label: hero.name,
-            data: statsData,
-            // backgroundColor: this.colors[index++]
-            backgroundColor: this.getRandomColor()
-          }         
-          chartsData.push(chartObj);
+          if (hero.stats.crimesSolvedStats) {
+            let statsData = hero.stats.crimesSolvedStats.lineData;
+            let chartObj = {
+              label: hero.name,
+              data: statsData,
+              // backgroundColor: this.colors[index++]
+              backgroundColor: this.getRandomColor()
+            }         
+            chartsData.push(chartObj);
+          }          
         })
 
         this.drawBarChart(chartsData);
@@ -45,11 +47,8 @@ export class StatisticsComponent implements OnInit {
   }
 
   getRandomColor(): string {
-    let letters = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
+    let color = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' 
+      + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
     return color;
   }
 
