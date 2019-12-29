@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HeroService } from 'src/app/hero.service';
-import { ParamMap } from '@angular/router/src/shared';
+import { ParamMap } from '@angular/router';
 import { CommunicationService } from '../communication.service';
 
 @Component({

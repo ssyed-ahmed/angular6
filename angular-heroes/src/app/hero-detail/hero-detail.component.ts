@@ -3,7 +3,7 @@ import { Hero } from '../hero';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HeroService } from 'src/app/hero.service';
 import { Location } from '@angular/common';
-import { ParamMap } from '@angular/router/src/shared';
+import { ParamMap } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { CommunicationService } from '../communication.service';
 

@@ -20,6 +20,10 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { HeroDetailCrimessolvedStatsComponent } from './hero-detail-crimessolved-stats/hero-detail-crimessolved-stats.component';
 import { HeadingTitleDirective } from './heading-title.directive';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -45,7 +49,14 @@ import { HeadingTitleDirective } from './heading-title.directive';
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, {dataEncapsulation: false}
-    )
+    ),
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot([]),
+    StoreDevtoolsModule.instrument({
+      name: 'Angular Heroes',
+      maxAge: 25,
+      logOnly: environment.production
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
